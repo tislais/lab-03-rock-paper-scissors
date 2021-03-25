@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { getRandomNumber } from './utils.js';
+import { didUserWin, getRandomNumber } from './utils.js';
 
 const playButton = document.querySelector('#play-button');
 const gameResultEl = document.querySelector('#game-result-el');
@@ -21,5 +21,27 @@ playButton.addEventListener('click', () => {
     const userThrow = document.querySelector('input:checked').value;
     console.log(userThrow, randomThrow);
 
-    
-})
+    if (didUserWin(userThrow, randomThrow) === 'win') {
+        totalWinCount++;
+        lastPlayerThrowEl.textContent = userThrow;
+        lastComputerThrowEl.textContent = randomThrow;
+
+        //console.log("wins: " + totalWinCount);
+    }
+
+    if (didUserWin(userThrow, randomThrow) === 'loss') {
+        totalLossCount++;
+        lastPlayerThrowEl.textContent = userThrow;
+        lastComputerThrowEl.textContent = randomThrow;
+
+        //console.log("Losses: " + totalLossCount);
+    }
+
+    if (didUserWin(userThrow, randomThrow) === 'draw') {
+        totalDrawCount++;
+        lastPlayerThrowEl.textContent = userThrow;
+        lastComputerThrowEl.textContent = randomThrow;
+
+        //console.log("Draws: " + totalDrawCount);
+    }
+});
