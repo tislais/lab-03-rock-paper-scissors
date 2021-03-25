@@ -1,8 +1,9 @@
-export function getRandomThrow() {
-    let randomThrow = Math.round(Math.random() * 3);
-    if (randomThrow === 0) return 'rock';
-    if (randomThrow === 1) return 'paper';
-    if (randomThrow === 3) return 'scissors';
+export function getRandomNumber() {
+    let randomNumber = Math.ceil(Math.random() * 3);
+    if (randomNumber === 1) return 'rock';
+    if (randomNumber === 2) return 'paper';
+    if (randomNumber === 3) return 'scissors';
+
 }
 
 

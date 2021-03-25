@@ -25,12 +25,26 @@
                 </ul>
             </div>
             <div class="game">
-                <button>Play</button>
-                <div class="game-result">You played this and the computer played that.</div>
+                <div class="game-board">
+                    <label>
+                        Rock
+                        <input type="radio" name="throw" value="rock" checked />
+                    </label>
+                    <label>
+                        Paper
+                        <input type="radio" name="throw" value="paper" />
+                    </label>
+                    <label>
+                        Scissors
+                        <input type="radio" name="throw" value="scissors" />
+                    </label>
+                </div>
+                <button id="play-button">Play</button>
+                <div id="game-result-el">You played <span id="last-player-throw-el">this</span> and the computer played <span id="last-computer-throw-el">that</span>.</div>
                 <div class="total-results">
-                    <div>Wins: 0</div>
-                    <div>Losses: 0</div>
-                    <div>Draws: 0</div>
+                    <div>Wins: <span id="total-wins-el"></span></div>
+                    <div>Losses: <span id="total-losses-el"></span></div>
+                    <div>Draws: <span id="total-draws-el"></span></div>
                 </div>
             </div>
         </main>
