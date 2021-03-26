@@ -70,4 +70,4 @@ resetButton.addEventListener('click', () => {
     humanHandsEl.classList.add('hidden');
     humanPlayer.classList.remove('hidden');
     robotPlayer.classList.remove('hidden');
-})
+});

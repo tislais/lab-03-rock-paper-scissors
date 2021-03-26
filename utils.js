@@ -1,6 +1,4 @@
 const gameResultEl = document.querySelector('#game-result-el');
-const lastPlayerThrowEl = document.querySelector('#last-player-throw-el');
-const lastComputerThrowEl = document.querySelector('#last-computer-throw-el');
 const humanPlayer = document.querySelector('#human-player');
 const humanRock = document.querySelector('#human-rock');
 const humanPaper = document.querySelector('#human-paper');
@@ -51,8 +49,6 @@ export function updateUI(player, computer){
     robotRock.classList.add('hidden');
     robotPaper.classList.add('hidden');
     robotScissors.classList.add('hidden');
-    //lastPlayerThrowEl.textContent = player;
-    //lastComputerThrowEl.textContent = computer;
 
     if (player === 'rock') humanRock.classList.remove('hidden');
     if (player === 'paper') humanPaper.classList.remove('hidden');
