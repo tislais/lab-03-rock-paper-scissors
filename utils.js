@@ -1,11 +1,13 @@
+const gameResultEl = document.querySelector('#game-result-el');
+const lastPlayerThrowEl = document.querySelector('#last-player-throw-el');
+const lastComputerThrowEl = document.querySelector('#last-computer-throw-el');
+
 export function getRandomNumber() {
     let randomNumber = Math.ceil(Math.random() * 3);
     if (randomNumber === 1) return 'rock';
     if (randomNumber === 2) return 'paper';
     if (randomNumber === 3) return 'scissors';
-
 }
-
 
 export function didUserWin(player, computer) {
 
@@ -24,4 +26,10 @@ export function didUserWin(player, computer) {
     if (player === 'scissors' && computer === 'paper') return 'win';
     if (player === 'scissors' && computer === 'rock') return 'loss';
 
+}
+
+export function updateUI(player, computer){
+    gameResultEl.classList.remove('hidden');
+    lastPlayerThrowEl.textContent = player;
+    lastComputerThrowEl.textContent = computer;
 }

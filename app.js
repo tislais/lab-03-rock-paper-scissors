@@ -1,10 +1,7 @@
 // import functions and grab DOM elements
-import { didUserWin, getRandomNumber } from './utils.js';
+import { didUserWin, getRandomNumber, updateUI } from './utils.js';
 
 const playButton = document.querySelector('#play-button');
-const gameResultEl = document.querySelector('#game-result-el');
-const lastPlayerThrowEl = document.querySelector('#last-player-throw-el');
-const lastComputerThrowEl = document.querySelector('#last-computer-throw-el');
 const totalWinsEl = document.querySelector('#total-wins-el');
 const totalLossesEl = document.querySelector('#total-losses-el');
 const totalDrawsEl = document.querySelector('#total-draws-el');
@@ -19,29 +16,22 @@ let totalDrawCount = 0;
 playButton.addEventListener('click', () => {
     const randomThrow = getRandomNumber();
     const userThrow = document.querySelector('input:checked').value;
-    console.log(userThrow, randomThrow);
 
     if (didUserWin(userThrow, randomThrow) === 'win') {
         totalWinCount++;
-        lastPlayerThrowEl.textContent = userThrow;
-        lastComputerThrowEl.textContent = randomThrow;
-
-        //console.log("wins: " + totalWinCount);
+        totalWinsEl.textContent = totalWinCount;
+        updateUI(userThrow, randomThrow);
     }
 
     if (didUserWin(userThrow, randomThrow) === 'loss') {
         totalLossCount++;
-        lastPlayerThrowEl.textContent = userThrow;
-        lastComputerThrowEl.textContent = randomThrow;
-
-        //console.log("Losses: " + totalLossCount);
+        totalLossesEl.textContent = totalLossCount;
+        updateUI(userThrow, randomThrow);
     }
 
     if (didUserWin(userThrow, randomThrow) === 'draw') {
         totalDrawCount++;
-        lastPlayerThrowEl.textContent = userThrow;
-        lastComputerThrowEl.textContent = randomThrow;
-
-        //console.log("Draws: " + totalDrawCount);
+        totalDrawsEl.textContent = totalDrawCount;
+        updateUI(userThrow, randomThrow);
     }
 });
