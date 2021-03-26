@@ -1,6 +1,14 @@
 const gameResultEl = document.querySelector('#game-result-el');
 const lastPlayerThrowEl = document.querySelector('#last-player-throw-el');
 const lastComputerThrowEl = document.querySelector('#last-computer-throw-el');
+const humanPlayer = document.querySelector('#human-player');
+const humanRock = document.querySelector('#human-rock');
+const humanPaper = document.querySelector('#human-paper');
+const humanScissors = document.querySelector('#human-scissors');
+const robotPlayer = document.querySelector('#robot-player');
+const robotRock = document.querySelector('#robot-rock');
+const robotPaper = document.querySelector('#robot-paper');
+const robotScissors = document.querySelector('#robot-scissors');
 
 export const resetButton = document.querySelector('#reset-button');
 
@@ -33,6 +41,25 @@ export function didUserWin(player, computer) {
 export function updateUI(player, computer){
     gameResultEl.classList.remove('hidden');
     resetButton.classList.remove('hidden');
-    lastPlayerThrowEl.textContent = player;
-    lastComputerThrowEl.textContent = computer;
+
+    humanPlayer.classList.add('hidden');
+    humanRock.classList.add('hidden');
+    humanPaper.classList.add('hidden');
+    humanScissors.classList.add('hidden');
+
+    robotPlayer.classList.add('hidden');
+    robotRock.classList.add('hidden');
+    robotPaper.classList.add('hidden');
+    robotScissors.classList.add('hidden');
+    //lastPlayerThrowEl.textContent = player;
+    //lastComputerThrowEl.textContent = computer;
+
+    if (player === 'rock') humanRock.classList.remove('hidden');
+    if (player === 'paper') humanPaper.classList.remove('hidden');
+    if (player === 'scissors') humanScissors.classList.remove('hidden');
+
+    if (computer === 'rock') robotRock.classList.remove('hidden');
+    if (computer === 'paper') robotPaper.classList.remove('hidden');
+    if (computer === 'scissors') robotScissors.classList.remove('hidden');
+    
 }
