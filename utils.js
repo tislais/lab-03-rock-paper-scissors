@@ -1,6 +1,7 @@
 const gameResultEl = document.querySelector('#game-result-el');
 const lastPlayerThrowEl = document.querySelector('#last-player-throw-el');
 const lastComputerThrowEl = document.querySelector('#last-computer-throw-el');
+
 export const resetButton = document.querySelector('#reset-button');
 
 export function getRandomNumber() {
