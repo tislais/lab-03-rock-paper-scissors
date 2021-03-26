@@ -15,40 +15,45 @@
 
 <body>
     <div class="wrap">
+        <h1>Rock Paper Scissors</h1>
         <main>
-            <h1>Rock Paper Scissors</h1>
             <div class="intro">
-                <p>This is the rules of the game</p>
-                <ul>
-                    <li>Paper beats rock</li>
-                    <li>Rock beats scissors</li>
-                    <li>Scissors beats paper</li>
-                </ul>
+                Paper beats rock. 
+                Rock beats scissors. 
+                Scissors beats paper.
             </div>
             <div class="game">
-                <div class="game-board">
-                    <label>
-                        Rock <i class="fas fa-hand-rock"></i>
-                        <input type="radio" name="throw" value="rock" checked />
-                    </label>
-                    <label>
-                        Paper <i class="fas fa-hand-paper"></i>
-                        <input type="radio" name="throw" value="paper" />
-                    </label>
-                    <label>
-                        Scissors <i class="fas fa-hand-scissors"></i>
-                        <input type="radio" name="throw" value="scissors" />
-                    </label>
-                </div>
-                <button id="play-button">Play</button>
-                <div id="game-result-el" class="hidden">You played <span id="last-player-throw-el">this</span> and the computer played <span id="last-computer-throw-el">that</span>.</div>
-                <div class="total-results">
-                    <div>Wins: <span id="total-wins-el"></span></div>
-                    <div>Losses: <span id="total-losses-el"></span></div>
-                    <div>Draws: <span id="total-draws-el"></span></div>
-                </div>
-                <button id="reset-button" class="hidden">Reset</button>
-                <div>Game has been reset <span id="reset-count">0</span> times.</div>
+                <label>
+                    <input type="radio" name="throw" value="rock" checked />
+                    <i class="fas fa-hand-rock"></i>
+                    <div>Rock</div>
+                </label>
+                <label>
+                    <input type="radio" name="throw" value="paper" />
+                    <i class="fas fa-hand-paper"></i>
+                    <div>Paper</div>
+                </label>
+                <label>
+                    <input type="radio" name="throw" value="scissors" />
+                    <i class="fas fa-hand-scissors"></i>
+                    <div>Scissors</div>
+                </label>
+            </div>
+            <div class="total-results">
+                <div>You: <span id="total-wins-el">0</span></div>
+                <div>Robot: <span id="total-losses-el">0</span></div>
+                <div>Draw: <span id="total-draws-el">0</span></div>
+            </div>
+            <div class="game-buttons">
+                <button id="play-button">Go</button>
+                <button id="reset-button" class="hidden">New Game</button>
+            </div>
+            <div id="game-result-el" class="hidden">
+                You played <span id="last-player-throw-el">this</span> and the computer played <span id="last-computer-throw-el">that</span>.
+            </div>
+            <div class="game-tally">
+                <div>Round <span id="round-count">0</span></div>
+                <div>Game <span id="reset-count">0</span></div>
             </div>
         </main>
     </div>
