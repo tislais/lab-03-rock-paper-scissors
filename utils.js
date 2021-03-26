@@ -1,6 +1,7 @@
 const gameResultEl = document.querySelector('#game-result-el');
 const lastPlayerThrowEl = document.querySelector('#last-player-throw-el');
 const lastComputerThrowEl = document.querySelector('#last-computer-throw-el');
+export const resetButton = document.querySelector('#reset-button');
 
 export function getRandomNumber() {
     let randomNumber = Math.ceil(Math.random() * 3);
@@ -30,6 +31,7 @@ export function didUserWin(player, computer) {
 
 export function updateUI(player, computer){
     gameResultEl.classList.remove('hidden');
+    resetButton.classList.remove('hidden');
     lastPlayerThrowEl.textContent = player;
     lastComputerThrowEl.textContent = computer;
 }
