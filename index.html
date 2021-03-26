@@ -9,44 +9,71 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>Rock Paper Scissors App</title>
 </head>
 
 <body>
-    <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
-        </div>
-    </header>
-    <main>
-        <section class="main-section">
-            <img class="main-logo" src="assets/alchemy-logo.png"/>
-            <h2>
-                Welcome to Alchemy Bootstrap!
-            </h2>
-
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam repellendus similique consectetur voluptas facilis molestiae voluptates nobis error sapiente, ad, ipsa vero non, sint eligendi? Eos praesentium iusto magnam exercitationem.
-                Earum sunt voluptatibus molestias, sint voluptatum quos reiciendis. Id asperiores deleniti dolores provident, eius, nostrum aperiam vel, optio qui illo corrupti in. Eum quam, est nemo porro sapiente excepturi assumenda.
-                Rerum unde quidem maxime. Ullam, dolores labore molestias voluptatibus adipisci quod? Quaerat nihil inventore molestiae assumenda, voluptates vel necessitatibus eligendi? Accusamus ratione eligendi reprehenderit? Beatae incidunt molestias ea soluta nulla.
-                Fugiat quae soluta voluptate mollitia praesentium modi ex illo, autem assumenda, vel aliquam fugit possimus dolorem esse corporis ipsa! Voluptatem sapiente error non, ea optio suscipit quasi maxime nobis ex?
-                Et ipsa tenetur ullam ab nesciunt quas fugit velit impedit illum esse eligendi corporis culpa praesentium aspernatur ex sint veniam quidem, doloribus corrupti hic vitae. Eum neque ducimus omnis exercitationem?
-            </p>
-            <hr />
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam repellendus similique consectetur voluptas facilis molestiae voluptates nobis error sapiente, ad, ipsa vero non, sint eligendi? Eos praesentium iusto magnam exercitationem.
-                Earum sunt voluptatibus molestias, sint voluptatum quos reiciendis. Id asperiores deleniti dolores provident, eius, nostrum aperiam vel, optio qui illo corrupti in. Eum quam, est nemo porro sapiente excepturi assumenda.
-                Rerum unde quidem maxime. Ullam, dolores labore molestias voluptatibus adipisci quod? Quaerat nihil inventore molestiae assumenda, voluptates vel necessitatibus eligendi? Accusamus ratione eligendi reprehenderit? Beatae incidunt molestias ea soluta nulla.
-                Fugiat quae soluta voluptate mollitia praesentium modi ex illo, autem assumenda, vel aliquam fugit possimus dolorem esse corporis ipsa! Voluptatem sapiente error non, ea optio suscipit quasi maxime nobis ex?
-                Et ipsa tenetur ullam ab nesciunt quas fugit velit impedit illum esse eligendi corporis culpa praesentium aspernatur ex sint veniam quidem, doloribus corrupti hic vitae. Eum neque ducimus omnis exercitationem?
-            </p>
-
-        </section>
-    </main>
-    <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
-    </footer>
-
+    <div class="wrap">
+        <!--<h1>Rock Paper Scissors</h1>-->
+        <main>
+            <!--<div class="intro">
+                Paper beats rock. 
+                Rock beats scissors. 
+                Scissors beats paper.
+            </div>-->
+            <div class="playfield">
+                <div class="player">
+                    <i id="human-player" class="fas fa-user"></i>
+                    <div id="human-hands">
+                        <i id="human-rock" class="fas fa-hand-rock hidden"></i>
+                        <i id="human-paper" class="fas fa-hand-paper hidden"></i>
+                        <i id="human-scissors" class="fas fa-hand-scissors hidden"></i>
+                    </div>
+                    <div class="score-text">Human: <span id="total-wins-el" class="score">0</span></div>
+                </div>
+                <div class="middle-playfield">
+                    <div id="vs" class="vs">VS</div>
+                    <div class="score-text">Draw: <span id="total-draws-el">0</span></div>
+                </div>
+                <div class="player">
+                    <i id="robot-player" class="fas fa-robot"></i>
+                    <div id="robot-hands">
+                        <i id="robot-rock" class="fas fa-hand-rock hidden"></i>
+                        <i id="robot-paper" class="fas fa-hand-paper hidden"></i>
+                        <i id="robot-scissors" class="fas fa-hand-scissors hidden"></i>
+                    </div>
+                    <div class="score-text">Robot: <span id="total-losses-el" class="score">0</span></div>
+                </div>
+            </div>
+            <div class="game">
+                <label>
+                    <input type="radio" name="throw" value="rock" checked />
+                    <i class="fas fa-hand-rock"></i>
+                </label>
+                <label>
+                    <input type="radio" name="throw" value="paper" />
+                    <i class="fas fa-hand-paper"></i>
+                </label>
+                <label>
+                    <input type="radio" name="throw" value="scissors" />
+                    <i class="fas fa-hand-scissors"></i>
+                </label>
+            </div>
+            <div class="your-move">Your move.</div>
+            <div class="game-buttons">
+                <button id="play-button">Roshambo</button>
+                <button id="reset-button" class="hidden">Start Over</button>
+            </div>
+            <div id="game-result-el" class="hidden">
+                <!--You played <span id="last-player-throw-el">this</span> and the computer played <span id="last-computer-throw-el">that</span>.-->
+            </div>
+            <div class="game-tally">
+                <div>Round <span id="round-count">1</span></div>
+                <div>Game <span id="reset-count">1</span></div>
+            </div>
+        </main>
+    </div>
     <script type="module" src="app.js"></script>
 </body>
 
